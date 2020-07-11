@@ -1,6 +1,0 @@
-- type: http
-  id: heartbeat-package-test
-  name: HeartBeat Package Test
-  hosts: ["http://${CONTECO_HOSTNAME}:8080/dashboard"]
-  check.response.status: [200]
-  schedule: '@every 30s'

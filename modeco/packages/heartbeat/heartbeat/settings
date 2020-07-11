@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 # START CONFIGURATION
+
 export CONTECO_DC_GLOBAL_PACKAGE_CONTECO="heartbeat.base"
 export CONTECO_DC_GLOBAL_PACKAGE_TAG="7.8.0"
 export CONTECO_DC_GLOBAL_STACKNAMES="heartbeat"
