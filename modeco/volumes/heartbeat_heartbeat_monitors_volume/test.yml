@@ -8,6 +8,7 @@
     scope: module
     type: external
     service: traefik
+    area: gateway
 
 - type: http
   id: internal_heartbeat-package-test
@@ -19,3 +20,4 @@
     scope: module
     type: internal
     service: traefik
+    area: dashboard
