@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
-export CONTECO_LABEL="package.heartbeat - ModEco"
-export CONTECO_DESCRIPTION="The ModEco ElasticSearch HeartBeat module package."
+export CONTECO_LABEL="package.metrics_monitor - ModEco"
+export CONTECO_DESCRIPTION="The ModEco Metrics Monitor module package based on ElasticSearch Heartbeat."
 
 export CONTECO_TYPE="package"
-export CONTECO_NAME="heartbeat"
+export CONTECO_NAME="metrics_monitor"
 export CONTECO_TAG="7.8.0"
 
 

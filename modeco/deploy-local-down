@@ -1,17 +1,17 @@
 #!/usr/bin/env bash
 
 
-prefix="package_$2"
+prefix="package_metrics_monitor_$2"
 
 
 executionplane --silent docker container prune --force
 
-if [[ "package_heartbeat_heartbeat_data_volume" == "$prefix"* ]] ; then
+if [[ "package_metrics_monitor_metrics_monitor_heartbeat_data_volume" == "$prefix"* ]] ; then
 		continue="true"
 		while [[ "true" == "$continue" ]] ;
 		do
-			executionplane docker volume rm "package_heartbeat_heartbeat_data_volume"
-			result=$(docker volume ls | grep "package_heartbeat_heartbeat_data_volume")
+			executionplane docker volume rm "package_metrics_monitor_metrics_monitor_heartbeat_data_volume"
+			result=$(docker volume ls | grep "package_metrics_monitor_metrics_monitor_heartbeat_data_volume")
 			if [[ "$result" == "" ]] ; then
 				continue="false"
 			else
@@ -20,12 +20,12 @@ if [[ "package_heartbeat_heartbeat_data_volume" == "$prefix"* ]] ; then
 		done;
 	fi
 	
-if [[ "package_heartbeat_heartbeat_monitors_volume" == "$prefix"* ]] ; then
+if [[ "package_metrics_monitor_metrics_monitor_heartbeat_monitors_volume" == "$prefix"* ]] ; then
 		continue="true"
 		while [[ "true" == "$continue" ]] ;
 		do
-			executionplane docker volume rm "package_heartbeat_heartbeat_monitors_volume"
-			result=$(docker volume ls | grep "package_heartbeat_heartbeat_monitors_volume")
+			executionplane docker volume rm "package_metrics_monitor_metrics_monitor_heartbeat_monitors_volume"
+			result=$(docker volume ls | grep "package_metrics_monitor_metrics_monitor_heartbeat_monitors_volume")
 			if [[ "$result" == "" ]] ; then
 				continue="false"
 			else

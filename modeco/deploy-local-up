@@ -1,17 +1,13 @@
 #!/usr/bin/env bash
 
 
-prefix="package_$2"
+prefix="package_metrics_monitor_$2"
 
-if [[ "package_heartbeat_heartbeat_data_volume" == "$prefix"* ]] ; then
-	executionplane --silent docker volume create package_heartbeat_heartbeat_data_volume
+if [[ "package_metrics_monitor_metrics_monitor_heartbeat_data_volume" == "$prefix"* ]] ; then
+	executionplane --silent docker volume create package_metrics_monitor_metrics_monitor_heartbeat_data_volume
 	fi
 	
-if [[ "package_heartbeat_heartbeat_monitors_volume" == "$prefix"* ]] ; then
-	executionplane --silent docker volume create package_heartbeat_heartbeat_monitors_volume
+if [[ "package_metrics_monitor_metrics_monitor_heartbeat_monitors_volume" == "$prefix"* ]] ; then
+	executionplane --silent docker volume create package_metrics_monitor_metrics_monitor_heartbeat_monitors_volume
 	fi
 	
-if [[ "package_heartbeat_heartbeat_monitors_volume" == "$prefix"* ]] ; then
-			executionplane --silent docker run -v package_heartbeat_heartbeat_monitors_volume:/usr/share/heartbeat/monitors.d ${CONTECO_REGISTRY}$1 --interactive cp -r /modeco/volumes/heartbeat_heartbeat_monitors_volume/* /usr/share/heartbeat/monitors.d
-		fi
-		
