@@ -1,11 +1,11 @@
 - type: http
   id: external_ksql_ksql_server_endpoint
   name: KSQL Server External
-  hosts: ["http://${CONTECO_HOSTNAME}:"]
+  hosts: ["http://${MODECO_HOSTNAME}:${MODECO_KSQL_KSQL_SERVER_ENDPOINT_PORT}"]
   check.response.status: [200]
   schedule: '@every 30s'
   fields:
-    scope: "package_metrics_monitor"
+    scope: "${MODECO_STACKSCOPE}"
     stack: ksql
     type: external
     service: ksql_server
@@ -17,11 +17,11 @@
 - type: http
   id: internal_ksql_ksql_server_endpoint
   name: KSQL Server Internal
-  hosts: ["http://package_metrics_monitor_ksql_ksql_server:8088"]
+  hosts: ["http://${MODECO_MODULEPREFIX}_ksql_ksql_server:8088"]
   check.response.status: [200]
   schedule: '@every 30s'
   fields:
-    scope: "package_metrics_monitor"
+    scope: "${MODECO_STACKSCOPE}"
     stack: ksql
     type: internal
     service: ksql_server
